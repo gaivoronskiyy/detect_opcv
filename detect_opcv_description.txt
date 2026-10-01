@@ -1,0 +1,71 @@
+I. Attention. After installation application and decompressing files auth key to main folder of app first run application necessary performs with privileges of administrator! 
+II. Application multi-threading and you can work with two cameras. For correct work from your environment the first time define two cams and near work process you will understand which cams have their id. Id cams defined from interval 0,1,2.... step 1 You can use USB cam or Wi-Fi cam  or laptop cam together.  
+III. If you use application near trial time than for first run necessary install 7z software to standard path of OS windows.
+Good luck!
+A.) Detection of move mode:
+For the first run you need to know about file 'modes' from the folder 'detect_opencv' - this is the main configuration file where you can see:
+1.) 0                -  num the cam
+2.) 1.11             -  accuracy
+3.) 500              -  timeout
+4.) 0                -  count of target objects
+5.) free@gmail.com   -  not worked (reserved for development other function)
+After running the application learn near 10 - 15 seconds for model detection of move and model count of objects of work space.
+Important for the first run:
+1 - the id of the cam that you have on your laptop (back or front laptop cam) or your home machine with a USB or Wi-Fi interface
+this is a property set the cam is defined from yourself of the main process such as detect moves. Other cam that auto defined of application will be work which work in second mode of detecting count the objects of work space of table and define different in count objects.
+2 - accuracy this is for your cams can different and for the work process you will understand how you can set this digit for your target and if in time the process of learning this digit can be more accurate that you need than you can simple set this digit from user terminal setting the digit and push the button Update.
+3 - timeout this mode helps for point 2 for your personal characteristics created images. At some time this is all that you need for first run application and testing for your interest. This is an option required for setting the timeout between created shots of cam.
+If you set the checkbox for field 'auto-mod' will perform the process learning for option 2 and rec this new data to file ‘modes.txt’ to the position 2.) accuracy if the old accuracy was very high and the app created images without something time out near 5 iterations.
+
+These properties you can set from the work process pushing the values from check forms and push button 'update mode', but the id camera for the main process is set before run. You main cam is using for main process detecting moves setting in file modes in the first string and other cams were defined for different regimes of work like count objects of the work space table.
+
+'hidden' - this is on/off regime for hidden work application with background mode. Setting this option the work of app not seen on computer display but the app performs all functions. Require after set on hidden mode reset the application only from standard reset sign X for every window but not pushing button 'reset' (about this option know only you and if the hidden mode will run with out your exist more probably after will be pushing 'reset' and program will be stopped);
+'auto mod' - enable this option you include auto define setting 'accuracy' which after last five created images without something time intervals learn the model ant rec new 'accuracy' to string 3 of file 'modes';
+The application not work in full darkness. In darkness will be running terminate because the standard cameras not have posable create movies in full darkness.
+
+Recommendations for work for mode of detection of move:
+You can see all results as creating images in folder C:\Users\Public\Pictures where every image saved with name exists [date@time_accuracy.png]. From windows cmd run command:
+  dir C:\Users\Public\Pictures\  
+getting full list all images where you can see mach high accuracy and there is more probably that has target objects.
+
+B.) Mode of count objects from workspace at table or panel of sales:
+On the users terminal low to right angle in small window you see that the app counts objects of work space. For run learn the model needs maximum achievement counting your object which equivalent the real their count through two settings short circuit or opening. This performs two options of the user's terminal from the slider task them high or low. After setting these options et the checkbox 'learning objects' and from the output window you can see the ending process of learning. After need disable the checkbox 'learning objects' and for test this mode can put away one object from table - the result will indicator will colored to red and in folder with images created image where you see there are event. But if the image not created you need checkout your accuracy maybe need set more high level for correct recognition of this action.
+Example worked process can see from video:
+https://drive.google.com/file/d/14uIFYJcEV0zkAH2y35n3gH1-Cwg-P2Pp/view?usp=sharing
+
+
+C.) Mode of recognition of label from outer close the personal:
+The actions needed for run this process:
+1. Necessary create template image 'templ_person0' from users terminal pushing button 'templ pers'. This option require two way: a.) if you not have now file 'templ_person0' in directory, than after push button need open 'templ_person0' in Paint and need set the fore coordinates for space where recently since label on outer clothe where this label often can have self place when the person enter the room or sit down from the table. After need to set properties (coordinates of high left angle and low right angle through ';' example: 400;10;625;225) to space the text edit from low left user terminal. After need again push the button 'templ_person0' to save this data. At this moment your file 'mode_rec.txt' will update for this digits 400;10;625;225.
+
+After push button 'detect persons' the application updates the files 'features' and 'keypoint' after learning the model and for another run the application the data will be getting for these files.
+b.) If the app runs with old 'templ_person0' and old files 'features', 'keypoint' for run work with this mode requires only pushing the button 'detect_person'. If need relearn the model on old image 'templ_person0' require push button 'templ pers', set properties coordinates (example: 400;10;625;225) to space the textedit, push button 'detect persons' after this actions the files of features, keypoints, mode_rec will be updated.
+The normal work with this mode when you will see from output wind this signs: 
+
+Place size x_coord_r: 433
+y_coord_r: 11
+width_r: 621
+high_r: 187
+Descriptors successfully read!
+Size mat_descr: 70
+Size corn_key: 70
+
+Data ML description points: 1
+Successfully learning data persons aver_p: 14382
+Successfully learning data persons dev_p: 14336
+Successfully learning data persons aver_p0: 11694.5
+Successfully learning data persons dev_p0: 11677.6
+
+The data 'Data ML description points: 1' - this is mean that the result of learning model for training data and compare new data from new image get the finding keypoints and their descriptors identity with defined accuracy. This result mean that the label of company was recognition and the system not create the action for define target person entered in store or room because for count persons for conversion metric not need include the persons worked our company  sale the product in store.
+Example you can see from video from reference: 
+https://drive.google.com/file/d/1Efgpc8BGC-JuLu7Boa2lCz61jgRs-Qza/view?usp=sharing
+
+D.) Mode  conversion.
+
+This regime often using with mode 'detect persons' because these two regimes complement each other. Necessary simple set checkbox 'conversion metric' and after work day need in field conversion update the digit of sales (total counting tickets) and push button conversion than you see from output windows solved conversion from one day.
+conversion = count total tickets/(count persons/2);
+in solve conversion using divider (count person/2) because the application counts all moves such as enter to store and exit persons from store. 
+Notice for conversion: if near day or different period for count conversion the application was reset from push button 'reset' than digit of count target buyers will saved to file 'modes' to string at 4 and after run application count the potential buyers will be continued, but if the application reset not from pushing button 'reset' this digit will be lose. 
+
+Example worked process can see from full video:
+https://drive.google.com/file/d/140egrOE549Hd8G-5zEfiW1DtzWIpDbIw/view?usp=sharing
