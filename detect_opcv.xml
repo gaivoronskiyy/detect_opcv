@@ -24,7 +24,7 @@
     <Program_Release_Year>2026</Program_Release_Year>
     <Program_Type>Freeware</Program_Type>
     <Program_Category_Class>Security &amp; Privacy::Other</Program_Category_Class>
-    <Program_OS_Support>WinOther</Program_OS_Support>
+    <Program_OS_Support>Win10,Win11,WinOther</Program_OS_Support>
   </Program_Info>
 
   <Web_Info>
@@ -45,7 +45,7 @@
 
   <Program_Descriptions>
     <English>
-      <Char_Desc_450>Application of machine vision the main goal of which is to achieve a security work environment or home environment and use for professional sphere of sales for stores. The environment Qt 6.9.2, C++ with MinGW-w64-x86 compilation there are mainly using library OpenCV3, OS Windows 10 and later versions. link for moderation: https://raw.githubusercontent.com/gaivoronskiyy/detect_opcv/refs/heads/main/detect_opcv_description.rtf?raw=true&amp;file=.txt</Char_Desc_450>
+      <Char_Desc_450>Application of machine vision the main goal of which is to achieve a security work environment or home environment and use for professional sphere of sales for stores. The environment Qt 6.9.2, C++ with MinGW-w64-x86 compilation there are main library OpenCV3, demo version requirement install 7-zip. link for moderation: https://raw.githubusercontent.com/gaivoronskiyy/detect_opcv/refs/heads/main/detect_opcv_description.rtf?raw=true&amp;file=.txt</Char_Desc_450>
     </English>
   </Program_Descriptions>
 </XML_DIZ_INFO>
